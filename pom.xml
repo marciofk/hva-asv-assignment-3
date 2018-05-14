@@ -96,6 +96,7 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.4.7.v20170914</version>
             </plugin>
+            <!-- JaCoCo Plugin -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
