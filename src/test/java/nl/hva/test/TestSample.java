@@ -9,7 +9,7 @@ public class TestSample {
 
     @Test
     public void testSample() {
-        assertEquals(Math.PI,3.1415,0.0001);
+        assertEquals(Math.PI,3.1515,0.0001);
     }
 
 }
