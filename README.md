@@ -30,20 +30,24 @@ Git will be used as our repository. Make sure that you have git installed on you
 
 Jenkins is a CI/CI tool. Make sure that you have Jenkins installed on your local machine. If not:
 
-* Download and install Jenkins from [the Jenkins WebSite](https://jenkins.io/)
+* Download Jenkins from [the Jenkins WebSite](https://jenkins.io/). Select **Generic Java Package (war)** for this exercise.
 * In Mac computers, Jenkins is installed in the */Applications/Jenkins* folder
-* Start the Jenkins Server from the command line inside the Jenkins installation folder: 
+* Start the Jenkins Server from the command line: 
 	* *java -jar jenkins.war*
 * The command will start a Jetty container. You can access Jenkins from [http://localhost:8080](localhost:8080)
+* Follow the instructions to unlock Jenkins
+* You don't need to install any plugin right now
 * Note that the war file can also be deployed into any JEE container. But for now, let's use this simplified startup process.
 
 #### 4. Jenkins configuration
 
 1. Open Jenkins startup page [http://localhost:8080](http://localhost:8080)
+2. Change the admin password. Go to the admin user menu *(top-right of the screen) > Configure* and change your password
 2. Go to *Manage Jenkins > Manage Plugins* option
 3. Install the *GitHub plugin*. This plugin integrates Jenkins with Github projects
 4. Install the *Deploy to container Plugin*. This plugin allows deploying your app into a JEE server. We will use it during the remaining steps.
-5. Go to *Manage Jenkins > Global Tool Configuration* and configure the location of your JDK, Maven and Git
+5. Go to *Manage Jenkins > Global Tool Configuration* and configure the location of your JDK and Maven. Do not ask Jenkins to install automatically these software units, provide your own location.
+	* In Mac computers, the JDK installation resides in */Library/Java/JavaVirtualMachines/jdk[version]/Contents/Home/*
 
 	
 ### Exercise Part 1 of 3
