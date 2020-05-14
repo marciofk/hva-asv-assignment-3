@@ -91,7 +91,7 @@ Now, configure the job to start automatically if the repository changes:
 
 In this step, you will deploy your application into a Tomcat Staging Server.
 
-1. Download and install [Tomcat 8](http://tomcat.apache.org/download-80.cgi)
+1. Download and install [Tomcat 8](http://tomcat.apache.org)
 2. Change the configuration of Tomcat to run in a different port (e.g. 8090). Note that Jenkins is already running on your local machine at port 8080.
 	* Go to the *tomcat_installation/conf/server.xml* and change the port 8080 to 8090
 3. Change the configuration of *tomcat-users.xml* and add the following roles and users. For the sake of simplicity let's use the standard tomcat user and password. We are using the role manager-script to allow the deployment using HTTP.
@@ -108,7 +108,7 @@ In this step, you will deploy your application into a Tomcat Staging Server.
 	* In *Post-build actions*, create a *deploy war/ear to a container*
 	* You can use "target/*.war" to specify the file
 	* Leave the context path empty
-	* Select "Tomcat 8 container"
+	* Select "Tomcat 9 remote"
 	* Inform the Tomcat URL (http://localhost:8080) and credentials (use the user tomcat, password tomcat)
 6. Go to the main page and schedule a build
 7. Check if the build executed properly 
