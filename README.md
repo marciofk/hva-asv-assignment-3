@@ -109,7 +109,7 @@ In this step, you will deploy your application into a Tomcat Staging Server.
 	* You can use "target/*.war" to specify the file
 	* Leave the context path empty
 	* Select "Tomcat 9 remote"
-	* Inform the Tomcat URL (http://localhost:8080) and credentials (use the user tomcat, password tomcat)
+	* Inform the Tomcat URL (http://localhost:8090) and credentials (use the user tomcat, password tomcat)
 6. Go to the main page and schedule a build
 7. Check if the build executed properly 
 8. Test if the application is running
