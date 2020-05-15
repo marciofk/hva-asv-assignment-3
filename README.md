@@ -2,10 +2,9 @@
 This is an introductory exercise about Continuous Integration. You will work with the Jenkins tool, and will create jobs to compile, package and deploy applications in a staging environment.
 
 ## Prerequisites
-You must have an IDE to work on this project. We recommend using the IntelliJ IDEA Community Edition. This IDE has good integration with Maven and JUnit.
+You must have an IDE to work on this project. We recommend using the IntelliJ IDEA Ultimate Edition. This IDE has good integration with Maven and JUnit.
 
 [IntelliJ IDEA download page](https://www.jetbrains.com/idea/download/#section=mac)
-
 
 ### Preparation
 
@@ -16,7 +15,7 @@ During this phase you will install the required software to do the exercise:
 Maven will be used to manage a Java application (compilation, testing, deployment). Make sure that you have Maven installed on your local machine. If not:
 
 * Download and extract Maven from [the Maven website](https://maven.apache.org/download.cgi)
-* Add your *maven_folder/bin* to your *PATH*
+* Optional if you want to run maven from your console: Add your *maven_folder/bin* to your *PATH*
 
 
 #### 2. Git installation
@@ -28,14 +27,13 @@ Git will be used as our repository. Make sure that you have git installed on you
 
 #### 3. Jenkins installation
 
-Jenkins is a CI/CI tool. Make sure that you have Jenkins installed on your local machine. If not:
+Jenkins is a CI/CD (Continuos Integration/Continuous Deployment) tool. Make sure that you have Jenkins installed on your local machine. If not:
 
 * Download Jenkins from [the Jenkins WebSite](https://jenkins.io/). Select **Generic Java Package (war)** for this exercise.
-* In Mac computers, Jenkins is installed in the */Applications/Jenkins* folder
 * Start the Jenkins Server from the command line: 
 	* *java -jar jenkins.war*
 * The command will start a Jetty container. You can access Jenkins from [http://localhost:8080](localhost:8080)
-* Follow the instructions to unlock Jenkins
+* Follow the instructions to unlock Jenkins. 
 * You don't need to install any plugin right now
 * Note that the war file can also be deployed into any JEE container. But for now, let's use this simplified startup process.
 
