@@ -112,17 +112,7 @@ In this step, you will deploy your application into a Tomcat Staging Server.
 7. Check if the build executed properly 
 8. Test if the application is running
 
-#### Optional 1
-
-The actual solution is mixing compilation and deploy in the same job, which is not recommended. Create a pipeline composed of two jobs (compilation + deployment). 
-
-Hints:
-
-* The easiest way is to configure the deployment job to start right after the compilation job. See the "Build Trigger" called "Build after other projects are built". 
-* You will need a plugin to copy files from one project to another.
-* If you have time take a look at the "Pipeline plugin" for Jenkins
-
-#### Optional 2
+#### Optional
 
 This project is using JaCoCo to generate the coverage report. The report is generated in the target folder, as could be seen in assignment 1. Your task is executing scripts to copy the HTML files to a web server. 
 
