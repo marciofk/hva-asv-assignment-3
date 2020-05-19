@@ -31,14 +31,14 @@ Jenkins is a CI/CD (Continuos Integration/Continuous Deployment) tool. Make sure
 
 * Download Jenkins from [the Jenkins WebSite](https://jenkins.io/). Select **Generic Java Package (war)** for this exercise.
 * Start the Jenkins Server from the command line: 
-	* *java -jar jenkins.war*
-* The command will start a Jetty container. You can access Jenkins from [http://localhost:8080](localhost:8080). The log file will display the generated admin password. Copy this password to be used in the upcoming step.
+	```java -jar jenkins.war --httpPort=9090```
+* The command will start a Jetty container. You can access Jenkins from [http://localhost:9090](http://localhost:9090). The log file will display the generated admin password. Copy this password to be used in the upcoming step.
 * Follow the instructions to unlock Jenkins using the provided admin password.
 * You don't need to install any plugin right now
 
 #### 4. Jenkins configuration
 
-1. Open Jenkins startup page [http://localhost:8080](http://localhost:8080)
+1. Open Jenkins startup page [http://localhost:9090](http://localhost:9090)
 2. Change the admin password. Go to the admin user menu *(top-right of the screen) > Configure* and change your password
 2. Go to *Manage Jenkins > Manage Plugins* option
 3. Install the *GitHub plugin*. This plugin integrates Jenkins with Github projects
