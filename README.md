@@ -2,9 +2,7 @@
 This is an introductory exercise about Continuous Integration. You will work with the Jenkins tool, and will create jobs to compile, package and deploy applications in a staging environment.
 
 ## Prerequisites
-You must have an IDE to work on this project. We recommend using the IntelliJ IDEA Ultimate Edition. This IDE has good integration with Maven and JUnit.
-
-[IntelliJ IDEA download page](https://www.jetbrains.com/idea/download/#section=mac)
+You must have a JDK 11+ installed in your computer.
 
 ### Preparation
 
@@ -50,7 +48,7 @@ Jenkins is a CI/CD (Continuos Integration/Continuous Deployment) tool. Make sure
 
 In this part, you will build a "Hello World" Jenkins Job.
 
-1. Open the Jenkins startup page at [http://localhost:8080](http://localhost:8080)
+1. Open the Jenkins startup page at [http://localhost:9090](http://localhost:8080)
 2. Create a new job (*new item* option)
 3. Specify a name and choose the **freestyle project**
 4. Create a build step to execute a shell command (Unix/Linux/Mac) or batch command (Windows). 
@@ -63,7 +61,7 @@ In this part, you will build a "Hello World" Jenkins Job.
 In this part, you create your Maven-based Jenkins project. A sample JEE project on GitHub is provided. 
 
 1. Fork the sample project [https://github.com/marciofk/hva-asv-assignment-3.git](https://github.com/marciofk/hva-asv-assignment-3.git). Please do not use the original project, fork it and you will have your own copy to play during the exercise!
-2. Open the Jenkins startup page [http://localhost:8080](http://localhost:8080)
+2. Open the Jenkins startup page [http://localhost:9090](http://localhost:9090)
 3. Create a new job (*new item* option)
 4. Specify a name and choose the **freestyle project**
 5. In *Source Code management*, inform your git repository URL (no credentials needed for this GitHub project), keep using the master branch.
@@ -87,18 +85,16 @@ Now, configure the job to start automatically if the repository changes:
 
 In this step, you will deploy your application into a Tomcat Staging Server.
 
-1. Download and install [Tomcat 8](http://tomcat.apache.org)
-2. Change the configuration of Tomcat to run in a different port (e.g. 8090). Note that Jenkins is already running on your local machine at port 8080.
-	* Go to the *tomcat_installation/conf/server.xml* and change the port 8080 to 8090
-3. Start Tomcat using (In Unix/Linux/Mac computers you will need to grant execution permissions to the bin shell scripts)
+1. Download and install [Tomcat 9](http://tomcat.apache.org)
+3. Start Tomcat using the startup.sh or startup.bat shell scripts located in the bin folder of the installation. In Unix/Linux/Mac computers you will need to grant execution permissions to the bin shell scripts.
 
-1. Open the Jenkins startup page [http://localhost:8080](http://localhost:8080)
+1. Open the Jenkins startup page [http://localhost:9090](http://localhost:9090)
 2. Modify your existing job 
 	* Add a new build step, *Execute Shell* for Unix-based systems or *Windows Batch command* for Windows OS
 	* In the command field, execute `cp ${WORKSPACE}/target/*.war <your-tomcat-installation>/webapps`, where WORKSPACE is the environment variable with the build folder, and <your-tomcat-installation> should be replaced with the folder where your tomcat is installed in your local computer. Note that tomcat will automatically install any war file copied to this folder.
 6. Go to the main page and schedule a build
 7. Check if the build executed properly by viewing the console output.
-8. Test if the application is running by visiting the page [http://localhost:8090/hva-asv-assignment-3-1.0/](http://localhost:8090/hva-asv-assignment-3-1.0/)
+8. Test if the application is running by visiting the page [http://localhost:8080/hva-asv-assignment-3-1.0/](http://localhost:8080/hva-asv-assignment-3-1.0/)
 
 #### Optional
 
