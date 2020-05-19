@@ -95,7 +95,7 @@ In this step, you will deploy your application into a Tomcat Staging Server.
 1. Open the Jenkins startup page [http://localhost:8080](http://localhost:8080)
 2. Modify your existing job 
 	* Add a new build step, *Execute Shell* for Unix-based systems or *Windows Batch command* for Windows OS
-	* In the command field, execute `cp ${WORKSPACE}/target/*.war <your-tomcat-installation>/webapps`, where WORKSPACE is the environment variable with the build folder.
+	* In the command field, execute `cp ${WORKSPACE}/target/*.war <your-tomcat-installation>/webapps`, where WORKSPACE is the environment variable with the build folder, and <your-tomcat-installation> should be replaced with the folder where your tomcat is installed in your local computer. Note that tomcat will automatically install any war file copied to this folder.
 6. Go to the main page and schedule a build
 7. Check if the build executed properly by viewing the console output.
 8. Test if the application is running by visiting the page [http://localhost:8090/hva-asv-assignment-3-1.0/](http://localhost:8090/hva-asv-assignment-3-1.0/)
