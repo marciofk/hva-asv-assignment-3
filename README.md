@@ -43,7 +43,6 @@ Jenkins is a CI/CD (Continuos Integration/Continuous Deployment) tool. Make sure
 2. Change the admin password. Go to the admin user menu *(top-right of the screen) > Configure* and change your password
 2. Go to *Manage Jenkins > Manage Plugins* option
 3. Install the *GitHub plugin*. This plugin integrates Jenkins with Github projects
-4. Install the *Deploy to container Plugin*. This plugin allows deploying your app into a JEE server. We will use it during the remaining steps.
 5. Go to *Manage Jenkins > Global Tool Configuration* and configure the location of your JDK and Maven. Do not ask Jenkins to install automatically these software units, provide your own location.
 	* In Mac computers, the JDK installation resides in */Library/Java/JavaVirtualMachines/jdk[version]/Contents/Home/*
 
