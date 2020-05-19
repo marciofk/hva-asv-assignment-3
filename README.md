@@ -32,10 +32,9 @@ Jenkins is a CI/CD (Continuos Integration/Continuous Deployment) tool. Make sure
 * Download Jenkins from [the Jenkins WebSite](https://jenkins.io/). Select **Generic Java Package (war)** for this exercise.
 * Start the Jenkins Server from the command line: 
 	* *java -jar jenkins.war*
-* The command will start a Jetty container. You can access Jenkins from [http://localhost:8080](localhost:8080)
-* Follow the instructions to unlock Jenkins. 
+* The command will start a Jetty container. You can access Jenkins from [http://localhost:8080](localhost:8080). The log file will display the generated admin password. Copy this password to be used in the upcoming step.
+* Follow the instructions to unlock Jenkins using the provided admin password.
 * You don't need to install any plugin right now
-* Note that the war file can also be deployed into any JEE container. But for now, let's use this simplified startup process.
 
 #### 4. Jenkins configuration
 
@@ -91,25 +90,15 @@ In this step, you will deploy your application into a Tomcat Staging Server.
 1. Download and install [Tomcat 8](http://tomcat.apache.org)
 2. Change the configuration of Tomcat to run in a different port (e.g. 8090). Note that Jenkins is already running on your local machine at port 8080.
 	* Go to the *tomcat_installation/conf/server.xml* and change the port 8080 to 8090
-3. Change the configuration of *tomcat-users.xml* and add the following roles and users. For the sake of simplicity let's use the standard tomcat user and password. We are using the role manager-script to allow the deployment using HTTP.
-
-```
-  <role rolename="manager-script"/>
-  <role rolename="tomcat"/>
-  <user username="tomcat" password="tomcat" roles="tomcat,manager-script"/>
-```
-4. Start Tomcat using (In Unix/Linux/Mac computers you will need to grant execution permissions to the bin shell scripts)
+3. Start Tomcat using (In Unix/Linux/Mac computers you will need to grant execution permissions to the bin shell scripts)
 
 1. Open the Jenkins startup page [http://localhost:8080](http://localhost:8080)
 2. Modify your existing job 
-	* In *Post-build actions*, create a *deploy war/ear to a container*
-	* You can use "target/*.war" to specify the file
-	* Leave the context path empty
-	* Select "Tomcat 9 remote"
-	* Inform the Tomcat URL (http://localhost:8090) and credentials (use the user tomcat, password tomcat)
+	* Add a new build step, *Execute Shell* for Unix-based systems or *Windows Batch command* for Windows OS
+	* In the command field, execute `cp ${WORKSPACE}/target/*.war <your-tomcat-installation>/webapps`, where WORKSPACE is the environment variable with the build folder.
 6. Go to the main page and schedule a build
-7. Check if the build executed properly 
-8. Test if the application is running
+7. Check if the build executed properly by viewing the console output.
+8. Test if the application is running by visiting the page [http://localhost:8090/hva-asv-assignment-3-1.0/](http://localhost:8090/hva-asv-assignment-3-1.0/)
 
 #### Optional
 
