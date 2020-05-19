@@ -4,6 +4,12 @@ pipeline {
         maven 'maven 3.6.3' 
         jdk 'JDK11' 
     }
+    
+    environment {
+        TOMCAT_FOLDER = '/Users/mfknr/software/apache-tomcat-9.0.35'
+        DB_ENGINE    = 'sqlite'
+    }    
+    
     stages {
         stage ('Initialize') {
             steps {
@@ -21,7 +27,7 @@ pipeline {
         
         stage ('Deploy') {
             steps {
-               sh 'cp target/*.war /Users/mfknr/software/apache-tomcat-9.0.35/webapps'
+                sh 'cp target/*.war ${TOMCAT_FOLDER}/webapps'
             }
         }
     }
