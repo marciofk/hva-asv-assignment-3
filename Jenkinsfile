@@ -18,5 +18,9 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+        
+        stage ('Deploy') {
+            sh 'cp target/*.war /Users/mfknr/software/apache-tomcat-9.0.35/webapps'
+        }
     }
 }
